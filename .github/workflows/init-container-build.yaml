@@ -15,7 +15,7 @@ env:
   IMAGE_REPOSITORY: ghcr.io/manumittal89/eurekads2
   IMAGE_NAME: init-container
 
-  GITHUB_TOKEN: ${{ github.token }}
+  GHCR_PAT: ${{ secrets.GHCR_PAT }}
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -41,7 +41,7 @@ jobs:
       - name: GitHub container registry login
         run: |
           echo "Logging in to container registry"
-          echo $GITHUB_TOKEN | docker login ghcr.io -u manumittal89 --password-stdin
+          echo $GHCR_PAT | docker login ghcr.io -u manumittal89 --password-stdin
       - name: Docker build and push
         run: |
           echo "Building image: $IMAGE_ID"
