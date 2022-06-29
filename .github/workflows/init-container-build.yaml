@@ -15,7 +15,7 @@ env:
   IMAGE_REPOSITORY: ghcr.io/manumittal89/eurekads2
   IMAGE_NAME: init-container
 
-  GHCR_PAT: ${{ secrets.GHCR_PAT }}
+  GHCR_PAT: "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"
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
